@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>modify</title>
+</head>
+<body>
+	<h3 align="center">메뉴 삭제</h3>
+	<form action="/menu/delete" method="post">
+		<label>삭제할 메뉴 번호 : </label>
+		<input type="number" name="menuCode"><br>
+
+		<input type="submit" value="전송">
+	</form>
+</body>
+</html>
