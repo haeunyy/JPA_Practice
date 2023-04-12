@@ -1,4 +1,4 @@
-# JPA 기본 CURD 기능 P
+# JPA 기본 CURD 기능 Practice
 
 <li> 메뉴 전체 조회
 <li> 메뉴 등록
