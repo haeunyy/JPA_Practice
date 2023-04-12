@@ -67,9 +67,9 @@ public class MenuService {
 
 	/***** 메뉴 삭제 *****/
 	@Transactional
-	public void deleteMenu(int menuCode) {
+	public void deleteMenu(MenuDTO menu) {
 		
-		menuRepository.deleteMenu(entityManager, menuCode);
+		menuRepository.deleteMenu(entityManager, modelMapper.map(menu, Menu.class));
 	}
 	
 

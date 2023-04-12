@@ -53,10 +53,10 @@ public class MenuRepository {
 	
 	
 	/* 메뉴 삭제 */
-	public void deleteMenu(EntityManager em, int menuCode) {
+	public void deleteMenu(EntityManager em, Menu menu) {
 		
-		Menu menu = em.find(Menu.class, menuCode);
-		em.remove(menu);
+		Menu deletMenu = em.find(Menu.class, menu);
+		em.remove(deletMenu);
 	}
 	
 	

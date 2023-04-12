@@ -102,10 +102,10 @@ public class MenuController {
 	
 	/* 메뉴 삭제 */
 	@PostMapping("/delete")
-	public String menuDelete(@ModelAttribute int menuCode) {
+	public String menuDelete(@ModelAttribute MenuDTO menu) {
 		
-		menuService.deleteMenu(menuCode);
-		System.out.println(menuCode);
+		menuService.deleteMenu(menu);
+		
 		return "redirect:/menu/list";
 	}
 	
