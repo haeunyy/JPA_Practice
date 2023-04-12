@@ -105,6 +105,7 @@ public class MenuController {
 	public String menuDelete(@ModelAttribute MenuDTO menu) {
 		
 		menuService.deleteMenu(menu);
+		
 		return "redirect:/menu/list";
 	}
 	
