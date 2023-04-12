@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>new Menu !!</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+<body>
+<form action="/menu/regist" method="post">
+	<label>새로운 메뉴 이름 : </label><input type="text" name="menuName" id="menuName"><br>
+	<label>새로운 메뉴 가격 : </label><input type="number" name="menuPrice"><br>
+	<label>카테고리 : </label>
+	<select name="categoryCode" id="categoryCode"></select><br>
+	<label>판매 상태 : </label>
+	<select name="orderableStatus" id="orderableStatus">
+		<option value="Y">판매중</option>
+		<option value="Y">판매중단</option>
+	</select>
+	<input type="submit" value="전송" onclick="isalert()">
+</form>
+
+<script>
+	$(function(){
+		$.ajax({
+			url: '/menu/category',
+			success: function(data){
+				console.log(data);
+				
+				let html='';
+				
+				for(let index in data){
+					html += `<option value='${data[index].categoryCode}'>${data[index].categoryName}</option>`;
+				}
+				document.querySelector("#categoryCode").insertAdjacentHTML('beforeend', html);
+			},
+			error: function(xhr){
+				console.log(xhr);
+			}
+		});
+	});
+	
+</script>
+<script>
+
+	function isalert(){
+		let name = $('#menuName').val()
+        alert(name+' 메뉴가 등록되었습니다. ');
+	}
+</script>
+
+</body>
+</html>
