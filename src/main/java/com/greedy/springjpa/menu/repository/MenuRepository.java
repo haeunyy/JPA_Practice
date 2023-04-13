@@ -55,7 +55,7 @@ public class MenuRepository {
 	/* 메뉴 삭제 */
 	public void deleteMenu(EntityManager em, Menu menu) {
 		
-		Menu deletMenu = em.find(Menu.class, menu);
+		Menu deletMenu = em.find(Menu.class, menu.getMenuCode());
 		em.remove(deletMenu);
 	}
 	
